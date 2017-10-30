@@ -1,3 +1,82 @@
+body{
+  background-color: #dadfea;
+}
+
+#clean-card{
+  display: none;
+}
+
+
 .card{
   box-shadow: 0 0 8px gray;
+  margin: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+
+  .card-header{
+    font-size: 1.2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+
+    button{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      span{
+        position: relative;
+        bottom: 1px;
+      }
+    }
+
+    button:hover{
+      box-shadow: 0 0 8px gray;
+      transform: scale(1.1);
+      //background-color: #17A1B7;
+
+    }
+
+    .card-title-input{
+      border: none;
+      border-bottom: 2px solid lightgray;
+      background-color: transparent;
+      margin-right: 10px;
+      position: relative;
+      right: 15px;
+    }
+
+    .card-title-input:focus{
+      outline: none;
+    }
+  }
+
+  .card-body{
+    .input-group{
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      //align-items: center;
+
+      .task-item-delete{
+        width: 30px;
+        height: 37.5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0;
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+
+      }
+    }
+  }
+  .button-container{
+    justify-content: space-between;
+    button:hover{
+      box-shadow: 0 0 5px lightgray;
+    }
+  }
 }
+
