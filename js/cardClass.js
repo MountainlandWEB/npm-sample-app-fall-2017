@@ -62,6 +62,7 @@ export default class Card{
             cardBodySpan.className = 'input-group-addon';
             let cardBodySpanInput = document.createElement('input');
             cardBodySpanInput.type = 'checkbox';
+            cardBodySpanInput.className = 'checkbox-class';
             cardBodySpanInput.checked = (this.tasks[i].checked) ? true : false;
             cardBodySpan.appendChild(cardBodySpanInput);
 

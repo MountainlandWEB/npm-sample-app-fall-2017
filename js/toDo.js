@@ -1,11 +1,12 @@
 import Card from './cardClass.js';
 let row = document.getElementById('card-row');
-let globalCardId = 0;
-let globalInputIdNum = 0;
+let globalCardId = -1;
+let globalInputIdNum = -1;
 let globalInputId = "input-id-";
 $('#add-new-btn').bind('click', addCard);
 $('#clear-completed-btn').bind('click', deletCompleted);
 $('#delete-all-btn').bind('click', deletAll);
+
 
 
 let cards = [];
@@ -54,7 +55,7 @@ function addCard(){
     let newCardNode = newCard.createNode();
     row.appendChild(newCardNode);
 
-    $(".form-control").bind("keypress", function(e){
+    $(`#${globalCardId} .form-control`).bind("keypress", function(e){
         if (e.keyCode === 13){
             newRow(e);
         }
@@ -86,13 +87,20 @@ function deletItem(e){
 }
 
 function deletCompleted(e){
-    console.log(e);
+    let all = document.querySelectorAll('.checkbox-class');
+
+    for(let i = 0; i < all.length; i++){
+        if (all[i].checked === true){
+            all[i].parentElement.parentElement.outerHTML = "";
+        }
+    }
+    console.log(all);
 }
 
 function deletAll(e){
     row.innerHTML = "";
     cards = [];
-    globalCardId = 0;
-    globalInputIdNum = 0;
+    globalCardId = -1;
+    globalInputIdNum = -1;
     addCard();
 }
