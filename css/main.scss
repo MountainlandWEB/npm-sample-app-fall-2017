@@ -6,6 +6,17 @@ body{
   display: none;
 }
 
+.header-buttons{
+  button{
+    height: 40px;
+    border: none;
+  }
+
+  button:focus{
+    outline: none;
+  }
+}
+
 
 .card{
   box-shadow: 0 0 8px gray;
@@ -13,18 +24,22 @@ body{
   padding-bottom: 10px;
   padding-right: 10px;
   padding-left: 10px;
+  max-height: 400px;
+  overflow: auto;
 
   .card-header{
     font-size: 1.2em;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
-
+    min-height: 50px;
+    background-color: rgba(239, 240, 241, .8);
     button{
       display: flex;
       justify-content: center;
       align-items: center;
       border-radius: 50%;
+      height: 36px;
       span{
         position: relative;
         bottom: 1px;

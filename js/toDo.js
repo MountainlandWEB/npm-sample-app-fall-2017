@@ -1,44 +1,93 @@
-if(!localStorage.getItem("Cards")){
+import Card from './cardClass.js';
+let row = document.querySelector('.row');
+let globalCardId = 0;
+let globalInputIdNum = 0;
+let globalInputId = "input-id-";
+$('#add-new-btn').bind('click', addCard);
+$('#clear-completed-btn').bind('click', deletCompleted);
+$('#delete-all-btn').bind('click', deletAll);
+
+let cards = [];
+
+
+
+addCard();
+
+function updateCard(){
 
 }
-let cleanCard = document.getElementById('clean-card');
-let row = document.querySelector('.row');
-let inputGroup = document.getElementById('input-group-id');
-let cardBody = document.querySelector('.card-body');
-
-let initialCard = cleanCard.cloneNode(true);
-initialCard.id = `${Math.floor(Math.random() * 1000000)}`;
-row.appendChild(initialCard);
 
 
+function newRow(e) {
+    //e.target.parentElement.parentElement.parentElement);
+    let inputRow = e.target.parentElement;
+    let newInputRow = inputRow.cloneNode(true);
+    globalInputId = 'input-id-';
+    newInputRow.id = globalInputId + (globalInputIdNum++);
+    newInputRow.childNodes[1].value = "";
+    inputRow.parentElement.appendChild(newInputRow);
+    newInputRow.childNodes[1].focus();
 
-$("#input-task").bind("keypress", function(e){
-    if (e.keyCode == 13){
-        newRow();
-    }
-});
+    $(".form-control").unbind();
 
 
+    $(".form-control").bind("keypress", function(e){
+        if (e.keyCode === 13){
+            newRow(e);
+        }
+    });
 
+    $(".task-item-delete").bind("click", function(e){
+        deletItem(e);
+    });
 
-function newRow(){
-    let newGroup = inputGroup.cloneNode(true);
-    cardBody.appendChild(newGroup);
 }
 
 function addCard(){
-    let newCard = cleanCard.cloneNode(true);
-    newCard.id = `${Math.random() * 1000}`;
-    let newCardNodes = newCard.childNodes;
-    console.log(newCardNodes);
-    row.appendChild(newCard);
+    globalCardId++;
+    globalInputId = 'input-id-';
+    globalInputIdNum++;
+    globalInputId += globalInputIdNum;
+    let newCard = new Card('', [{text: '', checked: false}], globalCardId, globalInputId, addCard, deletCard);
+    cards.push(newCard);
+    let newCardNode = newCard.createNode();
+    row.appendChild(newCardNode);
+
+    $(".form-control").bind("keypress", function(e){
+        if (e.keyCode === 13){
+            newRow(e);
+        }
+    });
+
+    $(".card-delete").bind("click", function(e){
+        deletCard(e);
+    });
+
+    $(".task-item-delete").bind("click", function(e){
+       deletItem(e);
+    });
+
 }
 
-function delet(e){
-    let cardId = e.parentElement;
-    cardId = cardId.parentElement;
-    cardId = cardId.parentElement;
+function deletCard(e){
+    let cardId = e.target.parentElement.parentElement.parentElement;
     let deletedCard = document.getElementById(cardId.id);
-    deletedCard.innerHTML = "";
     deletedCard.outerHTML = "";
+    cards.splice(cardId, 1);
+}
+
+function deletItem(e){
+    let cardId = e.target.parentElement.parentElement.parentElement.id;
+    console.log(cardId);
+    let item = e.target.parentElement;
+    let deletedItem = document.getElementById(item.id);
+    deletedItem.outerHTML = "";
+}
+
+function deletCompleted(e){
+    console.log(e);
+}
+
+function deletAll(e){
+
 }

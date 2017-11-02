@@ -4,22 +4,33 @@ body {
 #clean-card {
   display: none; }
 
+.header-buttons button {
+  height: 40px;
+  border: none; }
+.header-buttons button:focus {
+  outline: none; }
+
 .card {
   box-shadow: 0 0 8px gray;
   margin: 10px;
   padding-bottom: 10px;
   padding-right: 10px;
-  padding-left: 10px; }
+  padding-left: 10px;
+  max-height: 400px;
+  overflow: auto; }
   .card .card-header {
     font-size: 1.2em;
     font-weight: bold;
     display: flex;
-    justify-content: space-between; }
+    justify-content: space-between;
+    min-height: 50px;
+    background-color: rgba(239, 240, 241, 0.8); }
     .card .card-header button {
       display: flex;
       justify-content: center;
       align-items: center;
-      border-radius: 50%; }
+      border-radius: 50%;
+      height: 36px; }
       .card .card-header button span {
         position: relative;
         bottom: 1px; }
