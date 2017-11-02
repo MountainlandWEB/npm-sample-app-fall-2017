@@ -53,7 +53,11 @@ function addCard(){
     let newCard = new Card('', [{text: '', checked: false}], globalCardId, globalInputId, addCard, deletCard);
     cards.push(newCard);
     let newCardNode = newCard.createNode();
+    newCardNode.style.maxWidth = '150px';
+    newCardNode.style.maxHeight = '209px';
+
     row.appendChild(newCardNode);
+    let jVar = $(`#${newCardNode.id}`);
 
     $(`#${globalCardId} .form-control`).bind("keypress", function(e){
         if (e.keyCode === 13){
@@ -66,8 +70,13 @@ function addCard(){
     });
 
     $(".task-item-delete").bind("click", function(e){
-       deletItem(e);
+        deletItem(e);
     });
+
+    jVar.animate({maxWidth: '500px', maxHeight: '400px'}, 300);
+
+
+
 
 }
 
@@ -91,16 +100,20 @@ function deletCompleted(e){
 
     for(let i = 0; i < all.length; i++){
         if (all[i].checked === true){
-            all[i].parentElement.parentElement.outerHTML = "";
+            let jVar = $(`#${all[i].parentElement.parentElement.id}`);
+             jVar.animate({width: '0'}, "slow", () => {
+                all[i].parentElement.parentElement.outerHTML = "";
+            });
         }
     }
-    console.log(all);
 }
 
 function deletAll(e){
-    row.innerHTML = "";
-    cards = [];
-    globalCardId = -1;
-    globalInputIdNum = -1;
-    addCard();
+    $('.card').animate({height: '0'}, 500, () => {
+        row.innerHTML = "";
+        cards = [];
+        globalCardId = -1;
+        globalInputIdNum = -1;
+        addCard();
+    });
 }

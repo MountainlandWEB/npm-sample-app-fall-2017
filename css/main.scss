@@ -26,6 +26,8 @@ body{
   padding-left: 10px;
   max-height: 400px;
   overflow: auto;
+  overflow-x: hidden;
+  position: relative;
 
   .card-header{
     font-size: 1.2em;
