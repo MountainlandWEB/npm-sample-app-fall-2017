@@ -1,11 +1,12 @@
 import Card from './cardClass.js';
-let row = document.querySelector('.row');
+let row = document.getElementById('card-row');
 let globalCardId = 0;
 let globalInputIdNum = 0;
 let globalInputId = "input-id-";
 $('#add-new-btn').bind('click', addCard);
 $('#clear-completed-btn').bind('click', deletCompleted);
 $('#delete-all-btn').bind('click', deletAll);
+
 
 let cards = [];
 
@@ -89,5 +90,9 @@ function deletCompleted(e){
 }
 
 function deletAll(e){
-
+    row.innerHTML = "";
+    cards = [];
+    globalCardId = 0;
+    globalInputIdNum = 0;
+    addCard();
 }
