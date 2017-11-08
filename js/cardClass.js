@@ -2,28 +2,13 @@
 export default class Card{
     constructor(title, tasks, id, inputId, addCard, deletCard){
         (typeof title !== 'undefined') ? this.title = title : this.title = "";
-        (typeof tasks !== 'undefined') ? this.tasks = tasks : this.tasks = [{text: "", checked: false, checkId: ""}];
+        (typeof tasks !== 'undefined') ? this.tasks = tasks : this.tasks = [{text: "", checked: false}];
         (typeof id !== 'undefined') ? this.id = id : this.id = "";
         (typeof id !== 'undefined') ? this.inputId = inputId : this.inputId = "";
         (typeof addCard !== 'undefined') ? this.addCard = addCard : this.addCard = () => {};
         (typeof deletCard !== 'undefined') ? this.deletCard = deletCard : this.deletCard = () => {};
 
     }
-
-    clear(){
-        this.title = "";
-        this.tasks = [{text: "", checked: false}];
-        this.id = "";
-    }
-
-    addTask(task){
-        this.tasks.push(task);
-    }
-
-    deleteTask(taskNum){
-        this.tasks.splice(taskNum, 1);
-    }
-
 
     createNode(){
         let cardContainer = document.createElement('div');
@@ -37,8 +22,7 @@ export default class Card{
         cardHeaderInput.type = 'text';
         cardHeaderInput.className = 'card-title-input';
         cardHeaderInput.placeholder = 'Title';
-
-
+        cardHeaderInput.value = this.title;
 
         let cardHeaderBtn = document.createElement('button');
         cardHeaderBtn.className = 'btn btn-info';
@@ -56,7 +40,7 @@ export default class Card{
         for(let i = 0; i < this.tasks.length; i++) {
             let cardBodyInputGroup = document.createElement('div');
             cardBodyInputGroup.className = 'input-group';
-            cardBodyInputGroup.id = this.inputId;
+            cardBodyInputGroup.id = Math.ceil(Math.random() * 100000);
 
             let cardBodySpan = document.createElement('span');
             cardBodySpan.className = 'input-group-addon';
@@ -92,13 +76,11 @@ export default class Card{
         let btnDelete = document.createElement('button');
         btnDelete.type = 'button';
         btnDelete.className = 'btn btn-dark col-4 card-delete';
-        //btnDelete.onclick = this.deletCard;
         btnDelete.innerHTML = "Delete";
 
         let btnSave = document.createElement('button');
         btnSave.type = 'button';
-        btnSave.className = 'btn btn-light col-5';
-        btnSave.onclick = this.deletCard;
+        btnSave.className = 'btn btn-light col-5 card-save';
         btnSave.innerHTML = "Save";
 
         btnRow.appendChild(btnDelete);

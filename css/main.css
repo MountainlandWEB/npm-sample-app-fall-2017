@@ -11,12 +11,13 @@ body {
   outline: none; }
 
 .card {
-  box-shadow: 0 0 8px gray;
+  box-shadow: 0 0 12px lightgray;
   margin: 10px;
   padding-bottom: 10px;
   padding-right: 10px;
   padding-left: 10px;
   max-height: 400px;
+  width: 350px;
   overflow: auto;
   overflow-x: hidden;
   position: relative; }
