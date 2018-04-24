@@ -4,7 +4,7 @@
   "description": "An app for us to learn how to NPM all the things",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test-jasmine": "jasmine"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "homepage": "https://github.com/MountainlandWEB/npm-sample-app-fall-2017#readme",
   "dependencies": {
     "typescript": "^2.8.3"
+  },
+  "devDependencies": {
+    "jasmine": "^3.1.0"
   }
 }
