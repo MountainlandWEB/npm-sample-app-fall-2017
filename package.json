@@ -1,11 +1,18 @@
 {
+<<<<<<< HEAD
   "name": "expressapp",
   "version": "1.0.0",
   "description": "",
+=======
+  "name": "npm-sample-app-fall-2017",
+  "version": "1.0.0",
+  "description": "An app for us to learn how to NPM all the things",
+>>>>>>> 596637ae017fb6244080e0849df68ff24e4d148a
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+<<<<<<< HEAD
   "author": "",
   "license": "ISC",
   "dependencies": {
@@ -19,5 +26,20 @@
     "passport-local": "^1.0.0",
     "path": "^0.12.7",
     "pug": "^2.0.3"
+=======
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MountainlandWEB/npm-sample-app-fall-2017.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MountainlandWEB/npm-sample-app-fall-2017/issues"
+  },
+  "homepage": "https://github.com/MountainlandWEB/npm-sample-app-fall-2017#readme",
+  "dependencies": {
+    "typescript": "^2.8.3"
+>>>>>>> 596637ae017fb6244080e0849df68ff24e4d148a
   }
 }
