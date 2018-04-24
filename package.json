@@ -1,0 +1,23 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MountainlandWEB/npm-sample-app-fall-2017.git"
+  },
+  "author": "Mario Garcia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MountainlandWEB/npm-sample-app-fall-2017/issues"
+  },
+  "homepage": "https://github.com/MountainlandWEB/npm-sample-app-fall-2017#readme",
+  "devDependencies": {
+    "mocha": "*",
+    "should": ">= 0.0.1"
+  }
+}
