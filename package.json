@@ -4,7 +4,9 @@
   "description": "An app for us to learn how to NPM all the things",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "tsc",
+    "clean": "rm -r dist"
   },
   "repository": {
     "type": "git",
