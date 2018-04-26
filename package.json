@@ -9,7 +9,8 @@
     "test-mocha": "node_modules/.bin/mocha -w",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dist": "tsc",
-    "clean": "rm -r dist"
+    "clean": "rm -r dist",
+    "server":"node server/server.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +26,8 @@
   "homepage": "https://github.com/MountainlandWEB/npm-sample-app-fall-2017#readme",
   "dependencies": {
     "less": "^3.0.2",
-    "typescript": "^2.8.3"
+    "typescript": "^2.8.3",
+    "express": "^4.16.3"
   },
   "devDependencies": {
     "mocha": "*",
