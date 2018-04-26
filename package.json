@@ -6,7 +6,10 @@
   "main": "index.js",
   "scripts": {
     "test-jasmine": "jasmine",
-    "test": "node_modules/.bin/mocha -w"
+    "test-mocha": "node_modules/.bin/mocha -w"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "tsc",
+    "clean": "rm -r dist"
   },
   "repository": {
     "type": "git",
