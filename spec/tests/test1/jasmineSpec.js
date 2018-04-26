@@ -1,3 +1,5 @@
+const MathUtils = require('./jasmineTest');
+
 describe("MathUtils", () => {
 	describe("add", () => {
 		it("should add 2 numbers", () => {

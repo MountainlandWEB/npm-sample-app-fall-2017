@@ -1,4 +1,4 @@
-let MathUtils = (function(){
+const MathUtils = (function(){
 	let vm = this;
 
 	vm.add = add;
@@ -43,3 +43,5 @@ let MathUtils = (function(){
 
 
 }());
+
+module.exports  = MathUtils;

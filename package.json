@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/MountainlandWEB/npm-sample-app-fall-2017#readme",
   "dependencies": {
+    "jasmine-node": "^1.14.5",
     "typescript": "^2.8.3"
   },
   "devDependencies": {
