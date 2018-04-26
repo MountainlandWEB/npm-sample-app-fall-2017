@@ -1,13 +1,12 @@
 {
-  "scripts": {
   "name": "npm-sample-app-fall-2017",
   "version": "1.0.0",
   "description": "An app for us to learn how to NPM all the things",
   "main": "index.js",
   "scripts": {
-    "less-convert": "node app/styles/less-convert.js"
+    "less-convert": "node app/styles/less-convert.js",
     "test-jasmine": "jasmine",
-    "test-mocha": "node_modules/.bin/mocha -w"
+    "test-mocha": "node_modules/.bin/mocha -w",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dist": "tsc",
     "clean": "rm -r dist"
@@ -27,6 +26,7 @@
   "dependencies": {
     "less": "^3.0.2",
     "typescript": "^2.8.3"
+  },
   "devDependencies": {
     "mocha": "*",
     "should": ">= 0.0.1",
