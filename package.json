@@ -10,7 +10,12 @@
 >>>>>>> 596637ae017fb6244080e0849df68ff24e4d148a
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "less-convert": "node app/styles/less-convert.js",
+    "test-jasmine": "jasmine",
+    "test-mocha": "node_modules/.bin/mocha -w",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dist": "tsc",
+    "clean": "rm -r dist"
   },
 <<<<<<< HEAD
   "author": "",
@@ -31,15 +36,26 @@
     "type": "git",
     "url": "git+https://github.com/MountainlandWEB/npm-sample-app-fall-2017.git"
   },
+
+  "author": "Mario Garcia",
+  "license": "MIT",
   "keywords": [],
-  "author": "",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/MountainlandWEB/npm-sample-app-fall-2017/issues"
   },
   "homepage": "https://github.com/MountainlandWEB/npm-sample-app-fall-2017#readme",
   "dependencies": {
+    "less": "^3.0.2",
     "typescript": "^2.8.3"
+<<<<<<< HEAD
 >>>>>>> 596637ae017fb6244080e0849df68ff24e4d148a
+=======
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": ">= 0.0.1",
+    "typescript": "^2.8.3",
+    "jasmine": "^3.1.0"
+>>>>>>> e7fcb563935db2858dc7e285e3d300950615d14b
   }
 }
